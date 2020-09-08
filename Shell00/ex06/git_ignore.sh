@@ -1,2 +1,2 @@
 #!/bin/bash
-git status --ignored -s | grep '!! ' | cut -c4- | grep -o '[^/]*$' 
+git ls-files --exclude-standart -o -i
