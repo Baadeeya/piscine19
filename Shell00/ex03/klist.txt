@@ -1,5 +1,5 @@
-Credentials cache: API:CD640554-5931-4463-8397-92783315FEF1
+Credentials cache: API:1CC5339E-5F32-4730-BF74-28B361E3EA3E
         Principal: dgutin@S19.BE
 
-  Issued                Expires               Principal
-Sep  7 15:59:00 2020  Sep  8 01:59:00 2020  krbtgt/S19.BE@S19.BE
+  Issued                Expires             Flags    Principal
+Sep  8 11:26:59 2020  Sep  8 21:26:53 2020  FPIA   krbtgt/S19.BE@S19.BE
