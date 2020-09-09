@@ -1,1 +1,1 @@
-id -Gn | tr ' ' ','
+id -Gn | tr ' ' ',' | tr -d '\n'
