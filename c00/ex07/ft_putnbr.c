@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 15:29:46 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/10 17:39:47 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/10 18:13:49 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,19 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
+	int tab[];
+
 	if (nb < 0)
 	{
 		write(1, "-", 1);
 		nb *= -1;
 	}
-
+	if (nb == 0)
+	{
+		ft_putchar('0');
+	}
+	while 	(nb > 10)
+	{
+		ft_putchar('
+	}
 }
