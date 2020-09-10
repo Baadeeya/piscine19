@@ -6,11 +6,11 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 20:12:29 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/09 20:13:46 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/10 21:15:31 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.>
+#include <unistd.h>
 
 void	ft_print_numbers(void)
 {
