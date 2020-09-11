@@ -1,40 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 15:29:46 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/11 09:25:05 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/11 14:17:16 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/11 14:19:34 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_putchar(char c)
+char	*ft_strcpy(char *dest, char *src)
 {
-	write(1, &c, 1);
-}
 
-void	ft_putnbr(int nb)
-{
-	unsigned int n;
-	
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		n = -nb;
-	}
-	if (nb >= 0)
-	{
-		n = nb;
-	}
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		n %= 10;
-	}
-	ft_putchar('0' + n);
-}
