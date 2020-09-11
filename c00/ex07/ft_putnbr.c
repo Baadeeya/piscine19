@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 15:29:46 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/10 18:35:38 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/11 09:25:05 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,21 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
+	unsigned int n;
+	
 	if (nb < 0)
 	{
 		write(1, "-", 1);
-		nb *= -1;
+		n = -nb;
 	}
-	if (nb > 9)
+	if (nb >= 0)
 	{
-		ft_putnbr(nb / 10);
-		nb %= 10;
+		n = nb;
 	}
-	ft_putchar('0' + nb);
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		n %= 10;
+	}
+	ft_putchar('0' + n);
 }
