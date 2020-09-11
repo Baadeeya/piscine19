@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 14:17:16 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/11 14:42:56 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/11 15:59:08 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,14 @@ void	ft_putstr(char *str)
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
+	char *strtemp = dest;
+	if ((dest != NULL) && (src != NULL))
+			{
+				while (*src != NULL)
+				{
+					*dest++ = src++;
+				}
+			}
 }
 
 int	main(void)
