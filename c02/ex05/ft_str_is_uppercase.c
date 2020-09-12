@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 21:48:14 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 22:32:09 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/12 22:33:47 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/12 22:34:52 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	int i;
 	int j;
@@ -18,18 +18,18 @@ int	ft_str_is_alpha(char *str)
 
 	i = 0;
 	j = 0;
-	alpha = 0;
+	upper = 0;
 	while (str[i])
 	{
-		if ((97 <= str[i] && str[i] >= 122) || (65 <= str[i] && str[i] >= 90))
+		if (65 <= str[i] && str[i] >= 90)
 			j++;
 		i++;
 	}
 	if (j == i)
-		alpha = 1;
+		upper = 1;
 	if (!(str[i]))
-		alpha = 1;
+		upper = 1;
 	else
-		alpha = 0;
-	return (alpha);
+		upper = 0;
+	return (upper);
 }

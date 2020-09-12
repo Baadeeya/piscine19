@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 21:48:14 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 22:32:09 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/12 22:30:06 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/12 22:32:46 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_lowercase(char *str)
 {
 	int i;
 	int j;
-	int alpha;
+	int lower;
 
 	i = 0;
 	j = 0;
-	alpha = 0;
+	lower = 0;
 	while (str[i])
 	{
-		if ((97 <= str[i] && str[i] >= 122) || (65 <= str[i] && str[i] >= 90))
+		if (97 <= str[i] && str[i] >= 122)
 			j++;
 		i++;
 	}
 	if (j == i)
-		alpha = 1;
+		lower = 1;
 	if (!(str[i]))
-		alpha = 1;
+		lower = 1;
 	else
-		alpha = 0;
-	return (alpha);
+		lower = 0;
+	return (lower);
 }

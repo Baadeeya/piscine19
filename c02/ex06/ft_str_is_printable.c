@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 21:48:14 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 22:32:09 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/12 22:36:19 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/12 22:38:59 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int i;
 	int j;
-	int alpha;
+	int print;
 
 	i = 0;
 	j = 0;
-	alpha = 0;
+	print = 0;
 	while (str[i])
 	{
-		if ((97 <= str[i] && str[i] >= 122) || (65 <= str[i] && str[i] >= 90))
+		if (32 <= str[i] && str[i] >= 126)
 			j++;
 		i++;
 	}
 	if (j == i)
-		alpha = 1;
+		print = 1;
 	if (!(str[i]))
-		alpha = 1;
+		print = 1;
 	else
-		alpha = 0;
-	return (alpha);
+		print = 0;
+	return (print);
 }
