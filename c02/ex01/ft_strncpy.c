@@ -5,11 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 20:36:42 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 20:45:07 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/12 21:29:50 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/12 21:46:02 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	
+	int i;
+
+	i = 0;
+	while ((dest[i]) && (i < n))
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
+}
