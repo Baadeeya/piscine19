@@ -37,4 +37,3 @@ int	main(void)
 	ft_strcpy(dest, src);
 	return (0);
 }
-	
