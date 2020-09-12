@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 09:44:36 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 12:40:51 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/12 15:30:39 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,60 +17,42 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	rush(int x, int y)
+void	firstline(int x, int y, int i, int j, int k)
 {
-	int i;
-	int j;
-
-	i = 1;
-	j = 1;
-	if ((x > 0) || (y > 0))
+	if ((i == 1) && (j == 1))
 	{
-		while (y != j)
-		{
-			if ((j == 1) || (j == y))
-			{
-				ft_putchar('A');
-				while (i != x - 1)
-				{
-					ft_putchar('B');
-					i++;
-				}
-				if (i > 1)
-					ft_putchar('C');
-				if (j == 1)
-					ft_putchar('\n');
-				j++;
-			}
-			i = 1;
-			if (!((j == 1) && (j == y)))
-			{
-				ft_putchar('B');
-				while (i != x - 1)
-				{
-					ft_putchar(' ');
-					i++;
-				}
-				if (j > 1)
-					ft_putchar('B');
-				ft_putchar('\n');
-				j++;
-			}
-		}
-		i = 1;
 		ft_putchar('A');
-		while (i != x - 1)
+		if (x == 1)
+			y++;
+		i++;
+	}
+	else if (i == x)
+	{
+		ft_putchar('C');
+		i = 1;
+		j++;
+	}
+	else
+		while (i < k)
 		{
 			ft_putchar('B');
 			i++;
 		}
-		if (i > 1)
-			ft_putchar('C');
-	}
 }
 
-int	main(void)
+void	rush(int x, int y)
 {
-	rush(1, 1);
-	return (0);
-}
+	int i;
+	int j;
+	int k;
+
+	i = 1;
+	j = 1;
+	k = x - 1;
+	if ((x > 0) || (y > 0))
+	{
+		while (j < y++)
+		{
+			firstline(x, y, i, j, k);
+
+		}
