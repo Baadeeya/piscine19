@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 22:42:40 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 20:28:13 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/13 19:05:34 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/13 20:24:05 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_alpha(char c)
-{
-	return ((c >= '0' && c <= '9') ||
-			(c >= 'A' && c <= 'Z') ||
-			(c >= 'a' && c <= 'z'));
-}
-
-char	*ft_strcapitalize(char *str)
+int				ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	if (str[0] && str[0] >= 'a' && str[0] <= 'z')
-	{
-		str[0] -= 32;
-		i++;
-	}
 	while (str[i])
+		i++;
+	return (i);
+}
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int i;
+
+	i = 0;
+	while ((dest[i]) && (i < size))
 	{
-		if (!ft_alpha(str[i - 1]) && (str[i] >= 'a' && str[i] <= 'z'))
-			str[i] -= 32;
-		else if (ft_alpha(str[i - 1]) && (str[i] >= 'A' && str[i] <= 'Z'))
-			str[i] += 32;
+		dest[i] = src[i];
 		i++;
 	}
-	return (str);
+	while (dest[i])
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (ft_strlen(src));
 }
