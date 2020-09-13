@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:30:06 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 22:32:46 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/13 22:32:03 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_str_is_lowercase(char *str)
 	}
 	if (j == i)
 		lower = 1;
-	if (!(str[i]))
+	if (str[i])
 		lower = 1;
 	else
 		lower = 0;
