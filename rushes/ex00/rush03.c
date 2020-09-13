@@ -6,11 +6,9 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 09:44:36 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 17:14:00 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/13 17:56:53 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_putchar(char c);
 
@@ -29,7 +27,8 @@ void	firstline(int x, int y, int i)
 	}
 	if (x != 1)
 		ft_putchar('C');
-	ft_putchar('\n');
+	if (y > 1)
+		ft_putchar('\n');
 }
 
 void	secondline(int x, int y, int i, int j)
