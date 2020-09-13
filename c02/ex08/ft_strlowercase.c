@@ -6,19 +6,19 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:42:40 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 19:00:31 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/13 19:01:01 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+char	*ft_lowercase(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 		i++;
 	}
 	return (str);
