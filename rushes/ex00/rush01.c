@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 09:44:36 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 17:14:00 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/13 16:50:10 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/13 17:12:10 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ void	ft_putchar(char c);
 
 void	firstline(int x, int y, int i)
 {
-	ft_putchar('A');
+	ft_putchar('/');
 	if (x != 1)
 		i++;
 	if ((i != 1) && (i != x))
 	{
 		while (i <= x - 1)
 		{
-			ft_putchar('B');
+			ft_putchar('*');
 			i++;
 		}
 	}
 	if (x != 1)
-		ft_putchar('C');
+		ft_putchar(92);
 	ft_putchar('\n');
 }
 
@@ -37,14 +37,14 @@ void	secondline(int x, int y, int i, int j)
 	while (j < y - 1)
 	{
 		i = 1;
-		ft_putchar('B');
+		ft_putchar('*');
 		while (i < x - 1)
 		{
 			ft_putchar(' ');
 			i++;
 		}
 		if (x != 1)
-			ft_putchar('B');
+			ft_putchar('*');
 		ft_putchar('\n');
 		j++;
 	}
@@ -52,19 +52,19 @@ void	secondline(int x, int y, int i, int j)
 
 void	lastline(int x, int y, int i)
 {
-	ft_putchar('A');
+	ft_putchar(92);
 	if (x != 1)
 		i++;
 	if ((i != 1) && (i != x))
 	{
 		while (i <= x - 1)
 		{
-			ft_putchar('B');
+			ft_putchar('*');
 			i++;
 		}
 	}
 	if (x != 1)
-		ft_putchar('C');
+		ft_putchar('/');
 }
 
 void	rush(int x, int y)

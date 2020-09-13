@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 09:44:36 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 17:14:00 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/13 16:53:35 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/13 17:15:44 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	secondline(int x, int y, int i, int j)
 
 void	lastline(int x, int y, int i)
 {
-	ft_putchar('A');
+	ft_putchar('C');
 	if (x != 1)
 		i++;
 	if ((i != 1) && (i != x))
@@ -64,7 +64,7 @@ void	lastline(int x, int y, int i)
 		}
 	}
 	if (x != 1)
-		ft_putchar('C');
+		ft_putchar('A');
 }
 
 void	rush(int x, int y)
