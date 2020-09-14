@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/14 18:15:27 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/14 18:38:19 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/14 18:39:35 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/14 19:16:10 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
 	int i;
+	int x;
 
 	i = 0;
-	while (s1[i] == s2[i])
-	{
-		if (s1[i] == '\0')
-			return (0);
+	x = 0;
+	while (dest[i])
 		i++;
+	while (src[x])
+	{
+		dest[i] = src[x];
+		i++;
+		x++;
 	}
-	return (s1[i] - s2[i]);
+	dest[i] = '\0';
+	return (dest);
 }
