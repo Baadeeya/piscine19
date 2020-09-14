@@ -6,11 +6,11 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:42:40 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 19:01:01 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/14 17:18:44 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_lowercase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int i;
 

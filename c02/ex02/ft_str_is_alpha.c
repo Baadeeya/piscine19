@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 21:48:14 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 22:31:47 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/14 16:46:32 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/14 17:11:39 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@ int	ft_str_is_alpha(char *str)
 {
 	int i;
 	int j;
-	int alpha;
 
 	i = 0;
 	j = 0;
-	alpha = 0;
 	while (str[i])
 	{
-		if ((97 <= str[i] && str[i] >= 122) || (65 <= str[i] && str[i] >= 90))
+		if (('a' <= str[i] && str[i] >= 'z')
+				|| ('A' <= str[i] && str[i] >= 'Z'))
 			j++;
 		i++;
 	}
-	if (j == i)
-		alpha = 1;
-	if (str[i])
-		alpha = 1;
+	if (i != j)
+		return (0);
 	else
-		alpha = 0;
-	return (alpha);
+		return (1);
+	return (0);
 }

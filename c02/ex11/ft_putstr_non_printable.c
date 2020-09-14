@@ -6,12 +6,11 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 20:31:53 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 21:30:08 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/13 21:34:27 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {

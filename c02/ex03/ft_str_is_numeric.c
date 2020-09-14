@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:22:47 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/12 22:31:38 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/14 17:12:17 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@ int	ft_str_is_numeric(char *str)
 {
 	int i;
 	int j;
-	int num;
 
 	i = 0;
 	j = 0;
-	num = 0;
-	while (str[i])
+	while (str[i + 1])
 	{
-		if (48 <= str[i] && str[i] >= 59)
+		if (str[i] >= '0' && str[i] <= '9')
 			j++;
 		i++;
 	}
-	if (j == i)
-		num = 1;
-	if ((str[i]))
-		num = 1;
+	if (i != j)
+		return (0);
 	else
-		num = 0;
-	return (num);
+		return (1);
+	return (0);
 }

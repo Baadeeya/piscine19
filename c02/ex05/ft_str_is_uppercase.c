@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:33:47 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/13 22:32:10 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/14 17:10:51 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@ int	ft_str_is_uppercase(char *str)
 {
 	int i;
 	int j;
-	int alpha;
 
 	i = 0;
 	j = 0;
-	upper = 0;
 	while (str[i])
 	{
-		if (65 <= str[i] && str[i] >= 90)
+		if (str[i] >= 'A' && str[i] <= 'Z')
 			j++;
 		i++;
 	}
-	if (j == i)
-		upper = 1;
-	if (str[i])
-		upper = 1;
+	if (i != j)
+		return (0);
 	else
-		upper = 0;
-	return (upper);
+		return (1);
+	return (0);
 }
