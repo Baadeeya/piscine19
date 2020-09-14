@@ -6,11 +6,10 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 19:05:34 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/14 17:29:19 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/14 18:03:18 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 int				ft_strlen(char *str)
 {
 	int i;
@@ -42,16 +41,3 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	}
 	return (i);
 }
-
-int	main(void)
-{
-	int a;
-	int b;
-	char src[] = "Lol";
-	char dest[] = "vim";
-	
-	b = 3;
-	a = ft_strlcpy(dest, src, b);
-	printf("%s, %s, %d", src, dest, b);
-   return (0);
-}   
