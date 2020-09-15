@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 21:05:17 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/14 15:58:47 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/15 09:24:32 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ char	*ft_strcpy(char *dest, char *src)
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
