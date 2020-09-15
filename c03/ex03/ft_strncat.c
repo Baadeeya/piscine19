@@ -6,14 +6,14 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:53:55 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 17:54:35 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/15 18:09:39 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int i;
-	int x;
+	unsigned int i;
+	unsigned int x;
 
 	i = 0;
 	x = 0;
