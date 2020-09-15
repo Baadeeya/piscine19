@@ -1,24 +1,36 @@
 /* ************************************************************************** */
-
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/14 18:22:34 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 10:59:34 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/15 21:54:39 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/15 22:13:53 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_atoi(char *str)
 {
-	unsigned int i;
+	int result;
+	int minus;
+	int i;
 
+	result = 0;
+	minus = 1;
 	i = 0;
-	while ((s1[i] == s2[i]) && (s1[i]) && (i < n))
+	while ((str[i] == ' ') || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
-	if (c == n)
-		return (0);
-	return (s1[i] - s2[i]);
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			minus *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result *= 10 + (str[i] - '0');
+		i++;
+	}
+	return (minus * result);
 }
