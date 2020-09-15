@@ -1,22 +1,29 @@
 /* ************************************************************************** */
-
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/14 18:22:34 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 10:59:34 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/15 18:55:31 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/15 18:58:55 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_putchar(char c)
 {
-	unsigned int i;
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
 
 	i = 0;
-	while ((s1[i] == s2[i]) && (s1[i]) && (i < n))
+	while(str[i])
+	{
+		ft_putchar(str[i]);
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (0);
 }
