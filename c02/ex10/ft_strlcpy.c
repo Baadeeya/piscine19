@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 19:05:34 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 10:34:32 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/15 10:43:03 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 			j++;
 		}
 	}
-	else if (size != 0)
+	else if (size)
 	{
-		while(j + 1 < i)
+		while (j + 1 < i)
 		{
 			dest[j] = src[j];
 			j++;
 		}
+	}
 	return (i);
 }
