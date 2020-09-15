@@ -6,25 +6,32 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:52:15 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 18:15:06 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/15 18:26:25 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int i;
-	int x;
+	unsigned int i;
+	unsigned int x;
+	unsigned int taille;
 
 	i = 0;
 	x = 0;
+	taille = 0;
 	while (dest[i])
+	{
+		taille++;
 		i++;
-	while ((src[x]) && (x < size - 1))
+	}
+	if ((size < taille) || size == 0)
+		return (0);
+	while (x < (size - taille - 1))
 	{
 		dest[i] = src[x];
 		i++;
 		x++;
 	}
 	dest[i] = '\0';
-	return (size);
+	return (taille + x);
 }
