@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 11:58:52 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 11:59:36 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/15 17:53:55 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/15 17:54:35 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src, unsigned int nb)
 {
 	int i;
 	int x;
@@ -19,7 +19,7 @@ char	*ft_strcat(char *dest, char *src)
 	x = 0;
 	while (dest[i])
 		i++;
-	while ((src[x]) && (x < n))
+	while ((src[x]) && (x < nb))
 	{
 		dest[i] = src[x];
 		i++;
