@@ -6,33 +6,53 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 10:45:28 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/16 12:56:41 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/16 15:56:20 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_nbrread(int nb)
-{
-	unsigned int n;
+#include <unistd.h>
 
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb *= -1;
-	}
-	n = nb;
-	if (n > 9)
-	{
-		ft_nbrread(n / 10);
-		n %= 10;
-	}
-	return (n);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
 
-void	ft_base(char *base)
+int		ft_display(unsigned int n, char *base, unsigned int i)
+{
+	if (n > i)
+	{
+		ft_display(n / i, base, i);
+		n %= i;
+	}
+}
+
+int		ft_base(char c, char *base)
+{
+	while (*base)
+		if (c == *base++)
+			return (1);
+	return (0);
+}
+
+void	ft_putnbr_base(int nbr, char *base)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (base[i])
+	{
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' '
+				|| base[i] >= 9 && base[i] <= 13 || ft_base(base[i], base + i + 1))
+			return ;
 		i++;
-
+	}
+	if (i < 2)
+		return ;
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		ft_display(-nbr, base, i);
+	}
+	else
+		ft_display(nbr, base, i);
+}
