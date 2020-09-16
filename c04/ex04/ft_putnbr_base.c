@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 10:45:28 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/16 16:49:21 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/16 18:21:44 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_base(char c, char *base)
 
 void	ft_display(unsigned int n, char *base, unsigned int i)
 {
-	if (n > i)
+	if (n > i - 1)
 	{
 		ft_display(n / i, base, i);
 		n %= i;
