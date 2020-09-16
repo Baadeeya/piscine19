@@ -6,8 +6,33 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 10:45:28 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/16 10:45:30 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/16 12:56:41 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int		ft_nbrread(int nb)
+{
+	unsigned int n;
+
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb *= -1;
+	}
+	n = nb;
+	if (n > 9)
+	{
+		ft_nbrread(n / 10);
+		n %= 10;
+	}
+	return (n);
+}
+
+void	ft_base(char *base)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
 
