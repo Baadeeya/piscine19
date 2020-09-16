@@ -6,10 +6,9 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:52:15 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 21:38:56 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/16 12:08:15 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
