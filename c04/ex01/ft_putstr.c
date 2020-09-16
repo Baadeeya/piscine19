@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 18:55:31 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/15 18:58:55 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/16 17:07:59 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putstr(char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
