@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 14:35:20 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/17 17:48:54 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/17 16:17:12 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/17 17:21:07 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_is_prime(int nb)
+void	ft_putchar(char c)
 {
-	int i;
+	write(1, &c, 1);
+}
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i < nb)
+void	ft_putstr(char *str)
+{
+	while (*str)
+		ft_putchar(*str++);
+}
+
+int		main(int argc, char **argv)
+{
+	while (argc > 1)
 	{
-		if (nb % i == 0)
-			return (0);
-		else
-			i++;
+		ft_putstr(argv[--argc]);
+		ft_putchar('\n');
 	}
-	return (1);
+	return (0);
 }
