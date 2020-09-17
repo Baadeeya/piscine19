@@ -6,8 +6,23 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 10:25:56 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/17 10:26:08 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/17 14:14:46 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
+{
+	unsigned int i;
+	unsigned int n;
+
+	if (nb < 1)
+		return (0);
+	i = 1;
+	n = nb;
+	while (i * i < n)
+		i++;
+	if (i * i == n)
+		return (i);
+	else
+		return (0);
+}

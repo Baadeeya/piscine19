@@ -6,9 +6,11 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 18:55:31 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/16 17:07:59 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/17 12:48:57 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
@@ -25,5 +27,5 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
-	return (0);
+	return ;
 }
