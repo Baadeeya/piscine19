@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 10:13:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/17 10:26:37 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/17 11:03:14 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result *= 10 + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	return (minus * result);
