@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 10:13:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/17 10:19:00 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/17 10:26:37 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_atoi_base(char *str, char *base)
 	int nbr;
 
 	i = 1;
-	nbr = ft_atoi(*str);
+	nbr = ft_atoi(str);
 	while (base[i])
 	{
 		if (base[i] == '+' || base[i] == '-'
