@@ -6,11 +6,9 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 17:51:09 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/17 18:06:49 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/18 21:29:15 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_find_next_prime(int nb)
 {
@@ -31,12 +29,4 @@ int	ft_find_next_prime(int nb)
 		i += 2;
 	}
 	return (nb);
-}
-
-int	main(void)
-{
-	int a;
-	a = ft_find_next_prime(38);
-	printf("%d", a);
-	return (0);
 }
