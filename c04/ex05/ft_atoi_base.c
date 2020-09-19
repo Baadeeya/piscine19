@@ -6,11 +6,9 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 10:13:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/19 14:45:39 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/19 16:12:33 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_base(char c, char *base)
 {
@@ -27,8 +25,8 @@ int	ft_strlen_atoi(char *str)
 {
 	int i;
 
-	i = 0;
-	while (str[i])
+	i = -1;
+	while (str[++i])
 	{
 		if (str[i] == '+' || str[i] == '-'
 				|| str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)
@@ -48,6 +46,9 @@ int	ft_atoi_base(char *str, char *base)
 
 	if ((len = ft_strlen_atoi(base)) < 2)
 		return (0);
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	n = 0;
 	while (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			n = 1 - n;
@@ -60,11 +61,4 @@ int	ft_atoi_base(char *str, char *base)
 	if (n)
 		nbr *= -1;
 	return (nbr);
-}
-
-int	main(void)
-{
-	int a = ft_atoi_base("123156", "0123456789abcdef");
-	printf("%d", a);
-	return (0);
 }
