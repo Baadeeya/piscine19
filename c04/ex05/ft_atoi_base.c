@@ -6,82 +6,65 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 10:13:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/17 11:03:14 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/19 14:45:39 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int		ft_atoi(char *str)
+int	ft_base(char c, char *base)
 {
-	int result;
-	int minus;
 	int i;
 
-	result = 0;
-	minus = 1;
+	i = -1;
+	while (base[++i])
+		if (c == base[i])
+			return (i);
+	return (-1);
+}
+
+int	ft_strlen_atoi(char *str)
+{
+	int i;
+
 	i = 0;
-	while ((str[i] == ' ') || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	while ((str[i] == '-') || (str[i] == '+'))
+	while (str[i])
 	{
-		if (str[i] == '-')
-			minus *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
+		if (str[i] == '+' || str[i] == '-'
+				|| str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)
+				|| ft_base(str[i], str + i + 1) >= 0)
+			return (0);
 		i++;
 	}
-	return (minus * result);
+	return (i);
 }
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-int		ft_base(char c, char *base)
-{
-	while (*base)
-		if (c == *base++)
-			return (1);
-	return (0);
-}
-
-void	ft_display(unsigned int n, char *base, unsigned int i)
-{
-	if (n > i - 1)
-	{
-		ft_display(n / i, base, i);
-		n %= i;
-	}
-	ft_putchar(base[n]);
-}
-
-void	ft_atoi_base(char *str, char *base)
+int	ft_atoi_base(char *str, char *base)
 {
 	int i;
 	int nbr;
+	int len;
+	int n;
 
-	i = 1;
-	nbr = ft_atoi(str);
-	while (base[i])
+	if ((len = ft_strlen_atoi(base)) < 2)
+		return (0);
+	while (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			n = 1 - n;
+	nbr = 0;
+	while ((i = ft_base(*str, base)) >= 0)
 	{
-		if (base[i] == '+' || base[i] == '-'
-				|| base[i] == ' ' || (base[i] >= 9 && base[i] <= 13)
-				|| ft_base(base[i], base + i + 1))
-			return ;
-		i++;
+		nbr = nbr * len + i;
+		str++;
 	}
-	if (i < 2)
-		return ;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_display(-nbr, base, i);
-	}
-	else
-		ft_display(nbr, base, i);
+	if (n)
+		nbr *= -1;
+	return (nbr);
+}
+
+int	main(void)
+{
+	int a = ft_atoi_base("123156", "0123456789abcdef");
+	printf("%d", a);
+	return (0);
 }
