@@ -6,20 +6,18 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 11:04:33 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/20 11:33:18 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/20 14:10:01 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	g_size;
 
 /*
+** Check if the same number repeats on the same column/row before checking
+** the next one.
+** Returns :
 ** 0 = OK
 ** 1 = error
-*/
-
-/*
-** Verifie si il y a plusieurs exemplaires d'une meme nombre sur la meme ligne
-** et/ou meme colonne avant de verifier la suivante.
 */
 
 int		ft_check_dupes(char **tab)
@@ -48,10 +46,9 @@ int		ft_check_dupes(char **tab)
 }
 
 /*
-** Incremente 1 ou -1
-** Verifie si les nombres places dans le tableau correspondent ou non aux
-** parametres en arguments en prenant en temp la valeur la plus grande
-** de la colonne ou de la rangee
+** Increments 1 or -1
+** Check if the adresses in the tab match the parameters in the arguments
+** by keeping in memory the highest value of each column/row.
 */
 
 int		ft_view_count_coll(char **tab, char **hint, char increment)
@@ -111,8 +108,8 @@ int		ft_view_count_row(char **tab, char **hint, char increment)
 }
 
 /*
-** Appelle les fonctions precedentes. Si increment vaut 1, lit
-** d'un sens, et -1 lira dans le sens inverse.
+** Calls the previous functions. If increments is 1, reads
+** from one side to another, and the other way around with -1.
 */
 
 int		ft_check_hints(char **tab, char **hint)

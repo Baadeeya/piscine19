@@ -6,15 +6,15 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 10:55:58 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/20 11:03:47 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/20 14:03:54 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 /*
-** Genere une string en char (pas int car prends moins de place)
-** et lui alloue de la memoire.
+** Generates a char string (not in because it takes more memory)
+** and allocates the needed memory.
 */
 
 char	*ft_gen_char_ar(int i)
@@ -27,8 +27,8 @@ char	*ft_gen_char_ar(int i)
 }
 
 /*
-** Genere un tableau en pointant sur des adresses contenant elles-memes
-** des strings et leur alloue de la memoire.
+** Generates an array by pointing on the adresses that point
+** to strings to, and allocates the needed memory.
 */
 
 char	**ft_gen_char_double_ar(int x, int y)
