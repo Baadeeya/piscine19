@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 10:47:22 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/20 10:47:26 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/20 10:53:59 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_strlen(char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -73,13 +73,20 @@ int		ft_initial_check(int argc, char **argv, char **hint)
 	if (argc != 2 || ft_strlen(argv[1]) != (g_size * 8) - 1)
 		return (ft_error());
 	i = -1;
-	while(++i < (g_size * 4) - 1)
+	while (++i < (g_size * 4) - 1)
 		if (argv[1][i * 2 + 1] != ' ')
 			return (ft_error());
 	i = -1;
-	while(++i < 4)
+	while (++i < 4)
 	{
 		o = -1;
 		while (++o < g_size)
+		{
+			hint[i][o] = 10 * (argv[i][(i * g_size + o) * 3] - '0');
+			hint[i][o] += argv[1][(i * g_size + o) * 3 + 1] - '0';
+			if (!(hint[i][o] >= 1 && hint[i][o] <= g_size))
+				return (ft_error());
+		}
 	}
+	return (0);
 }
