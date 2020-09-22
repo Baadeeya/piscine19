@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:09:25 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/21 22:16:00 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/22 11:58:26 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int		ft_bigfatstrlen(int size, char **strs, char *sep)
 	m = 0;
 	while (sep[m])
 		m++;
-	m *= size -1;
+	m *= size - 1;
 	while (x < size)
 	{
 		y = 0;
-		while (strs [x][y])
+		while (strs[x][y])
 		{
 			y++;
 			m++;
@@ -50,4 +50,17 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		return (0);
 	if (size == 0)
 		return (str);
+	x = -1;
+	i = -1;
+	while (++x < size)
+	{
+		y = -1;
+		s = -1;
+		while (strs[x][++y])
+			str[++i] = strs[x][y];
+		while (sep[++s] && x < size - 1)
+			str[++i] = sep[s];
+	}
+	str[++i] = '\0';
+	return (str);
 }
