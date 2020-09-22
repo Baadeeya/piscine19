@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 10:13:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/22 14:07:33 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/22 15:06:33 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ int	ft_strlen_atoi(char *str)
 				|| str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)
 				|| ft_base(str[i], str + i + 1) >= 0)
 			return (0);
-		i++;
 	}
-	if (i < 2)
-		return (0);
 	return (i);
 }
 
