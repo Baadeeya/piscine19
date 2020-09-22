@@ -6,11 +6,11 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 17:26:23 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/22 22:17:50 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/22 22:22:56 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_base(char c, char *base)
+int		ft_base(char c, char *base)
 {
 	int i;
 
@@ -21,7 +21,7 @@ int	ft_base(char c, char *base)
 	return (-1);
 }
 
-int	ft_strlen_atoi(char *str)
+int		ft_strlen_atoi(char *str)
 {
 	int i;
 
@@ -38,7 +38,7 @@ int	ft_strlen_atoi(char *str)
 	return (i);
 }
 
-int	ft_atoi_base(char *str, char *base)
+int		ft_atoi_base(char *str, char *base)
 {
 	int i;
 	int nbr;
@@ -64,9 +64,20 @@ int	ft_atoi_base(char *str, char *base)
 	return (nbr);
 }
 
+int		ft_nbrlen(unsigned int n, unsigned int base_size)
+{
+	if (n < base_size)
+		return (1);
+	return (1 + ft_nbrl(n / base_size, base_size));
+}
+
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int	nb;
+	char			*dest;
+	unsigned int	nb;
+	int				size;
+	int				i;
+	int				n;
 
-	nb = ft_atoi_base(nbr, base_from);
+	n = ft_base(base_from);
 }
