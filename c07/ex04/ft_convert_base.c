@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 17:26:23 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/23 11:18:10 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/23 11:49:43 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,40 @@ void	ft_itoa_base(int nbr, int baselen)
 	while (nbr != 0)
 	{
 		modulo = nbr % baselen;
-		str[i++] = (modulo > 9) ? (modulo - 10) + 'a' : rem + '0';
+		dest[i++] = (modulo > 9) ? (modulo - 10) + 'a' : rem + '0';
 		nbr = nbr/baselen;
 	}
+	if (neg)
+		str[i++] = '-';
+	ft_rev_tab(dest);
+	return (dest);
+}
 
+void	ft_rev_tab(*str)
+{
+	int		i;
+	int		x;
+	int		len;
+
+	len = 0;
+	x = 0;
+	while (str[len])
+		ilen++;
+	i = len ;
+	while ((str[--i]) && x != len / 2)
+	{
+		ft_swap(str[i], str[x]);
+		x++;
+	}
+}
+
+void	ft_swap(char *a, char *b)
+{
+	char c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
