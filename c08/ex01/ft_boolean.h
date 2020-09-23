@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 17:51:09 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/23 21:23:15 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/23 22:37:21 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/23 22:40:49 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_find_next_prime(int nb)
-{
-	unsigned int i;
+#indef FT_BOOLEAN_H
+# define
 
-	if (nb < 3)
-		return (2);
-	if (!(nb % 2))
-		nb++;
-	i = 3;
-	while (i * i <= (unsigned int)nb)
-	{
-		if (!(nb % i))
-		{
-			nb += 2;
-			i = 1;
-		}
-		i += 2;
-	}
-	return (nb);
-}
+#include <unistd.h>
+typedef char	t_bool;
 
-int	main(void)
-{
-
-}
