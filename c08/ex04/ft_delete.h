@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_delete.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 17:51:09 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/24 16:11:55 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/24 14:12:21 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/24 16:07:21 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_find_next_prime(int nb)
-{
-	unsigned int i;
+#ifndef FT_DELETE_H
+# define FT_DELETE_H
 
-	if (nb < 3)
-		return (2);
-	if (!(nb % 2))
-		nb++;
-	i = 3;
-	while (i * i <= (unsigned int)nb)
-	{
-		if (!(nb % i))
-		{
-			nb += 2;
-			i = 1;
-		}
-		i += 2;
-	}
-	return (nb);
-}
+typedef struct	s_stock_str
+{
+	int			size;
+	char		*str;
+	char		*copy;
+}				t_stock_str;
+
+#endif
