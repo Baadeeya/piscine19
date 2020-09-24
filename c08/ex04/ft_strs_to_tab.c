@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 14:18:59 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/24 16:06:28 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/24 18:27:23 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ char				*ft_strdup(char *str)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, int **av)
 {
-	int		i;
-	char	*tab;
+	int			i;
+	t_stock_str	*tab;
 
 	i = -1;
+	if (ac < 0)
+		ac = 0;
 	if (!(tab = malloc(sizeof(struct s_stock_str) * (ac + 1))))
 		return (NULL);
 	while (++i < ac)
@@ -50,6 +52,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, int **av)
 		tab[i].str = av[i];
 		tab[i].cpy = ft_strdup(av[i]);
 	}
-	tab[i] = (struct s_stock_str){0, 0, 0};
+	tab[i].str = 0;
 	return (tab);
 }

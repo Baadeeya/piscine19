@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/19 19:47:57 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/21 15:21:12 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/24 18:29:32 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,16 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
 char	*ft_strdup(char *src)
 {
-	char *dest;
+	int		i;
+	char	*dest;
 
-	dest = malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (dest == '\0')
+	i = -1;
+	if (!(dest = malloc((ft_strlen(src) + 1) * sizeof(char))))
 		return (NULL);
-	return (ft_strcpy(dest, src));
+	while (src[++i])
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
 }
