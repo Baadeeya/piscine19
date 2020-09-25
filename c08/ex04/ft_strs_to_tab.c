@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 14:18:59 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/24 22:42:20 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/25 16:55:29 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char				*ft_strdup(char *str)
 	return (dest);
 }
 
-struct s_stock_str	*ft_strs_to_tab(int ac, int **av)
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	int			i;
 	t_stock_str	*tab;

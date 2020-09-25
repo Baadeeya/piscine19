@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 18:34:31 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/24 18:45:48 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/25 16:58:58 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_putstr(char *str)
 	while (str[++i])
 		write(1, &str[i], 1);
 	ft_putchar('-');
+	write(1, "\n", 1);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
