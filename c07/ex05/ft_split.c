@@ -6,30 +6,94 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 17:00:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/25 17:45:26 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/26 16:25:50 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		ft_strlen(char *str)
+#include <stdlib.h> 
+#include <stdio.h>
+ 
+int  ft_is_separator(char *str, char *charset)
 {
-	int		i;
+  int i;
+  int x;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+  i = -1;
+  x = -1;
+  if (!(*charset))
+      return (-1);
+  while (str[++i])
+  {
+    while (charset[++x])
+    {
+      if (str[i] == charset[x])
+        return (i);
+    }
+    return (i);
+  }
+  return (-1);
 }
 
-char	**ft_split(char *str, char *charset)
+char  *ft_strdup(char *src)
 {
-	char	**tab;
-	int		i;
-	int		x;
+  int   i;
+  int   x;
+  char  *dest;
 
-	if (!(tab = (char**)malloc(sizeof(char*) * ft_wordcount(str + 1))))
-		return (NULL);
+  i = 0;
+  while(src[i])
+    i++;
+  if (!(dest = malloc(sizeof(char) * i + 1)))
+      return (NULL);
+  x = -1;
+  while (src[++x])
+      dest[x] = src[x];
+  dest[x] = '\0';
+  return (dest);
+}
 
-	return (tab);
+ char **ft_split(char *str, char *charset)
+{
+  int   i;
+  int   position;
+  int   count;
+  int   memory;
+  char  **arr;
+
+  i = 0;
+  position = 0;
+  while(str[position])
+  {
+    count = ((ft_is_separator(str + position, charset)) - 1);
+    if (!(arr = malloc(sizeof(char*) * i + 1)))
+        return (NULL);
+    if (!(arr[i] = malloc(sizeof(char) * i + 1)))
+        return (NULL);
+    if (count == -1)
+      while (str[count++])
+        *arr[i] = str[count];
+    arr[i][count + 1] = '\0';
+    position = count;
+    while (-1 < count--)
+        arr[i][count] = str[count];
+    position++;
+    i++;
+    memory = -1;
+    while (++memory < count)
+      free(arr[count]);
+  }
+  return (arr);
+}
+
+int main(int argc, char **argv)
+{
+  char **split;
+
+  split = ft_split(argv[1], argv[2]);
+  while (argc < 8000)
+  {
+    printf("[0]%s\n", split[0]);
+    printf("[1]%s\n", split[1]);
+    return (0);
+  }
 }
