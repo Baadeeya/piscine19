@@ -6,12 +6,11 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 18:34:31 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/25 16:58:58 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/26 16:40:58 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
-#include <stdlib.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -19,52 +18,50 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_display(unsigned int nb)
-{
-	if (nb)
-	{
-		ft_display(nb / 10);
-		ft_putchar('0' + nb % 10);
-	}
-}
-
 void	ft_putnbr(int nb)
 {
-	unsigned int	n;
-
-	if (!nb)
-		ft_putchar('0');
 	if (nb < 0)
 	{
-		n = -nb;
 		ft_putchar('-');
+		nb++;
+		nb = -nb;
+		if (nb == 2147483647)
+		{
+			ft_putchar('2');
+			nb = 147483647;
+		}
+		nb++;
 	}
-	else
-		n = nb;
-	ft_display(n);
-	ft_putchar('\n');
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }
 
 void	ft_putstr(char *str)
 {
-	int				i;
+	int a;
 
-	i = -1;
-	while (str[++i])
-		write(1, &str[i], 1);
-	ft_putchar('-');
-	write(1, "\n", 1);
+	a = 0;
+	while (str[a] != '\0')
+	{
+		ft_putchar(str[a]);
+		a++;
+	}
 }
 
 void	ft_show_tab(struct s_stock_str *par)
 {
-	int				i;
+	int i;
 
-	i = -1;
-	while (par[++i])
+	i = 0;
+	while (par[i].str != 0)
 	{
 		ft_putstr(par[i].str);
+		write(1, "\n", 1);
 		ft_putnbr(par[i].size);
+		write(1, "\n", 1);
 		ft_putstr(par[i].copy);
+		write(1, "\n", 1);
+		i++;
 	}
 }
