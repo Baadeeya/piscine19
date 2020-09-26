@@ -6,13 +6,13 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:17:59 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/26 16:34:49 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/26 18:34:53 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) ((Value < 0) ? (Value *= -1) : Value)
+# define ABS(Value) ((Value < 0) ? (Value * -1) : Value)
 
 #endif
