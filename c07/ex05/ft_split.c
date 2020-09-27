@@ -5,92 +5,99 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 17:00:12 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/26 21:45:06 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/27 14:22:29 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/27 16:49:51 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int		ft_is_separator(char *str, char *charset)
+int        ft_is_separator(char str, char *charset)
 {
-	int i;
-	int x;
+    int        x;
 
-	i = -1;
-	x = -1;
-	if (!(*charset))
-		return (-1);
-	while (str[++i])
-	{
-		while (charset[++x])
-		{
-			if (str[i] == charset[x])
-				return (i);
-		}
-		return (i);
-	}
-	return (-1);
+    x = -1;
+    while (charset[++x])
+        if (str == charset[x])
+            return (1);
+    return (0);
 }
 
-char	*ft_strdup(char *src)
+int        ft_malloc(char *str, char *charset)
 {
-	int		i;
+    int        i;
+    int        word;
+
+    i = 0;
+    word = 0;
+    while (str[i])
+    {
+        if (!(ft_is_separator(str[i], charset)))
+            i++;
+        else
+        {
+            i++;
+            word++;
+        }
+    }
+    return (word + 1);
+}
+
+int		ft_strlen(char *str, int i, char *charset)
+{
 	int		x;
-	char	*dest;
 
-	i = 0;
-	while (src[i])
-		i++;
-	if (!(dest = malloc(sizeof(char) * i + 1)))
-		return (NULL);
-	x = -1;
-	while (src[++x])
-		dest[x] = src[x];
-	dest[x] = '\0';
-	return (dest);
-}
-
-char	**ft_split(char *str, char *charset)
-{
-	int		i;
-	int		position;
-	int		count;
-	int		memory;
-	char	**arr;
-
-	i = 0;
-	position = 0;
-	while (str[position])
+	x = 0;
+	while (!((ft_is_separator(str, charset))))
 	{
-		count = ((ft_is_separator(str + position, charset)) - 1);
-		if (!(arr = malloc(sizeof(char*) * i + 1)))
-			return (NULL);
-		if (!(arr[i] = malloc(sizeof(char) * i + 1)))
-			return (NULL);
-		if (count == -1)
-			while (str[count++])
-				*arr[i] = str[count];
-		arr[i][count + 1] = '\0';
-		position = count;
-		while (-1 < count--)
-			arr[i][count] = str[count];
-		position++;
 		i++;
-		memory = -1;
-		while (++memory < count)
-			free(arr[count]);
+		x++;
 	}
-	return (arr);
+	return (x);
 }
 
-int		main(void)
+char    **ft_split(char *str, char *charset)
 {
-	char **split;
+    int		i;
+    int		x;
+    int		position;
+    char    **arr;
 
-	split = ft_split("Salut les amis", " ");
+    i = 0;
+    position = 0;
+    x = 0;
+    if (!(arr = malloc(sizeof(char*) * (1 + ft_malloc(str, charset)))))
+		return (NULL);
+    while (str[i])
+    {
+        if (!(ft_is_separator(str[i], charset)))
+            i++;
+        else
+        {
+			if (!(arr[x] = malloc(sizeof(char*)) * (ft_strlen(str, i, charset) + 1)))
+				return (NULL);
+            arr[x - 1][i] = '\0';
+            //            arr[x] = 0;
+            if (arr[x - 1])
+            {
+                position = i;
+                while (--position >= 0)
+                    arr[x - 1][position] = str[position];
+            }
+            i++;
+        }
+    }
+    return (arr);
+}
 
-	printf("[0]%s\n%s", split[0], split[1]);
-	return (0);
+int        main(void)
+{
+    char **split;
+
+    //    split[0] = malloc(sizeof(char*) * 1000);
+    split = ft_split("Salut les amis", " ");
+
+    printf("[0]%s\n", split[0]);
+    return (0);
 }
