@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 16:40:55 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/28 16:41:36 by dgutin           ###   ########.fr       */
+/*   Created: 2020/09/28 12:44:28 by dgutin            #+#    #+#             */
+/*   Updated: 2020/09/28 13:13:01 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
-	int x;
+	int		i;
+	int		*res;
 
-	x = *a;
-	*a = *b;
-	*b = x;
+	i = -1;
+	if (length < 1 || !(ret = malloc(length * (sizeof(int)))))
+		return (NULL);
+	while (++i < length)
+		res[i] = f(tab[i]);
+	return (res);
 }
