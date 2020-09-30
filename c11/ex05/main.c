@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:54:30 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/30 14:32:24 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 16:13:35 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,21 @@ int	ft_valid_op(char *av)
 	if (av[2] == '+' || av[2] == '-' ||
 			av[2] == '/' || av[2] == '*' || av[2] == '%')
 		return (1);
-	write(1, "0", 1);
 	return (0);
 }
 
-int	ft_calculus(char **av, int a, int b)
+int	ft_calculus(char **av)
 {
 	if (*av[2] == '/')
-		return (ft_div(a, b));
+		return (3);
 	if (*av[2] == '%')
-		return (ft_mod(a, b));
+		return (4);
 	if (*av[2] == '+')
-		return (ft_plus(a, b));
+		return (0);
 	if (*av[2] == '-')
-		return (ft_plus(a, b));
+		return (1);
 	if (*av[2] == '*')
-		return (ft_multi(a, b));
+		return (2);
 	else
 		return (0);
 }
@@ -41,17 +40,27 @@ int	main(int ac, char **av)
 {
 	int	a;
 	int	b;
+	int	(*f[5])(int, int);
 
-	if (*av[2] == '/' && *av[3] == '0')
-		write(1, "Stop : division by zero\n", 24);
-	if (*av[2] == '%' && *av[3] == '0')
-		write(1, "Stop : modulo by zero\n", 22);
+	f[0] = &ft_plus;
+	f[1] = &ft_minus;
+	f[2] = &ft_multi;
+	f[3] = &ft_div;
+	f[4] = &ft_mod;
 	if (ac != 4)
 		return (0);
-	if (ft_valid_op(av[2]))
+	else if (*av[2] == '/' && *av[3] == '0')
+		ft_putstr("Stop : division by zero\n\0");
+	else if (*av[2] == '%' && *av[3] == '0')
+		ft_putstr("Stop : modulo by zero\n");
+	else if (ft_valid_op(av[2]))
 		return (0);
-	a = ft_atoi(av[1]);
-	b = ft_atoi(av[3]);
-	ft_putnbr(ft_calculus(av, a, b));
+	else
+	{
+		a = ft_atoi(av[1]);
+		b = ft_atoi(av[3]);
+		ft_putnbr((f[ft_calculus(av)](a, b)));
+		ft_putstr("\n");
+	}
 	return (0);
 }

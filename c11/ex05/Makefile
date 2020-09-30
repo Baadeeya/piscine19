@@ -6,7 +6,7 @@
 #    By: dgutin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/29 16:23:13 by dgutin            #+#    #+#              #
-#    Updated: 2020/09/29 16:23:28 by dgutin           ###   ########.fr        #
+#    Updated: 2020/09/30 16:15:56 by dgutin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ SRCS		= ft_atoi.c \
 			  ft_putchar.c \
 			  ft_putnbr.c \
 			  ft_putstr.c \
-			  ft_strlen.c \
 			  main.c
 
 OBJS		= ${SRCS:.c=.o}
