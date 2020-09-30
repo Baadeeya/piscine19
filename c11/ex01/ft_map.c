@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 12:44:28 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/28 13:13:01 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:37:48 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	*ft_map(int *tab, int length, int (*f)(int))
 	int		*res;
 
 	i = -1;
-	if (length < 1 || !(ret = malloc(length * (sizeof(int)))))
+	if (length < 1 || !(res = malloc(length * (sizeof(int)))))
 		return (NULL);
 	while (++i < length)
 		res[i] = f(tab[i]);
