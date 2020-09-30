@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 16:24:46 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/30 16:26:23 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 20:33:37 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void	ft_sort_string_tab(char **tab)
 		x = -1;
 		while (++x < size - 1 - i)
 			if (ft_strcmp(tab[x], tab[x + 1]) > 0)
-				ft_strs_swap(&tab[x], &tab[x + 1]);
+				ft_swap(&tab[x], &tab[x + 1]);
 	}
 }
