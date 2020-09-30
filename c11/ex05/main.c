@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:54:30 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/30 11:56:03 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 14:32:24 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,28 @@ int	ft_valid_op(char *av)
 int	ft_calculus(char **av, int a, int b)
 {
 	if (*av[2] == '/')
-	{
-		if (*av[3] == '0')
-			ft_error(1);
-		else
-			return (ft_div(a, b));
-	}
+		return (ft_div(a, b));
 	if (*av[2] == '%')
-	{
-		if (*av[3] == '0')
-			ft_error(0);
-		else
-			return (ft_mod(a, b));
-	}
+		return (ft_mod(a, b));
 	if (*av[2] == '+')
 		return (ft_plus(a, b));
 	if (*av[2] == '-')
 		return (ft_plus(a, b));
 	if (*av[2] == '*')
 		return (ft_multi(a, b));
-	return (0);
+	else
+		return (0);
 }
-
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {
 	int	a;
 	int	b;
 
+	if (*av[2] == '/' && *av[3] == '0')
+		write(1, "Stop : division by zero\n", 24);
+	if (*av[2] == '%' && *av[3] == '0')
+		write(1, "Stop : modulo by zero\n", 22);
 	if (ac != 4)
 		return (0);
 	if (ft_valid_op(av[2]))
