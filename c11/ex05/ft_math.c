@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:53:33 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/29 18:53:03 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 11:34:12 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,10 @@ int	ft_multi(int a, int b)
 
 int	ft_div(int a, int b)
 {
-	if (b == 0)
-		return (0);
 	return (a / b);
 }
 
 int	ft_mod(int a, int b)
 {
-	if (b == 0)
-		return (0);
 	return (a % b);
 }
