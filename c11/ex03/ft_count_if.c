@@ -6,19 +6,22 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 14:52:54 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/28 14:57:15 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 18:43:04 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_count_if(char **tab, int length, int (*f)(char*))
 {
 	int	i;
-	int	x;
+	int	nb;
 
 	i = 0;
-	x = 0;
-	while (i < length)
-		while (f(tab[i++]))
-			x++;
-	return (x);
+	nb = 0;
+	while (tab[i][0] != '0')
+	{
+		if (f(tab[i]) == 1)
+			nb++;
+		i++;
+	}
+	return (nb);
 }

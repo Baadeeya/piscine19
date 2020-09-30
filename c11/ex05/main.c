@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:54:30 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/30 16:13:35 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 20:32:31 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_calculus(char **av)
 	if (*av[2] == '*')
 		return (2);
 	else
-		return (0);
+		return (69);
 }
 
 int	main(int ac, char **av)
@@ -47,20 +47,20 @@ int	main(int ac, char **av)
 	f[2] = &ft_multi;
 	f[3] = &ft_div;
 	f[4] = &ft_mod;
+	a = ft_atoi(av[1]);
+	b = ft_atoi(av[3]);
 	if (ac != 4)
 		return (0);
-	else if (*av[2] == '/' && *av[3] == '0')
-		ft_putstr("Stop : division by zero\n\0");
-	else if (*av[2] == '%' && *av[3] == '0')
-		ft_putstr("Stop : modulo by zero\n");
+	if (ft_calculus(av) == 69)
+		ft_putstr("0");
 	else if (ft_valid_op(av[2]))
 		return (0);
+	else if (*av[2] == '/' && *av[3] == '0')
+		ft_putstr("Stop : division by zero");
+	else if (*av[2] == '%' && *av[3] == '0')
+		ft_putstr("Stop : modulo by zero");
 	else
-	{
-		a = ft_atoi(av[1]);
-		b = ft_atoi(av[3]);
 		ft_putnbr((f[ft_calculus(av)](a, b)));
-		ft_putstr("\n");
-	}
+	ft_putstr("\n");
 	return (0);
 }
