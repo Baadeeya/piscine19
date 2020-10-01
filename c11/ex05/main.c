@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:54:30 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/30 20:32:31 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/10/01 11:16:00 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_calculus(char **av)
 	if (*av[2] == '*')
 		return (2);
 	else
-		return (69);
+		return (5);
 }
 
 int	main(int ac, char **av)
@@ -51,9 +51,9 @@ int	main(int ac, char **av)
 	b = ft_atoi(av[3]);
 	if (ac != 4)
 		return (0);
-	if (ft_calculus(av) == 69)
+	else if (ft_calculus(av) == 5)
 		ft_putstr("0");
-	else if (ft_valid_op(av[2]))
+	else if (ft_valid_op(av[0]))
 		return (0);
 	else if (*av[2] == '/' && *av[3] == '0')
 		ft_putstr("Stop : division by zero");
