@@ -6,7 +6,7 @@
 /*   By: dgutin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 11:35:20 by dgutin            #+#    #+#             */
-/*   Updated: 2020/09/30 20:44:33 by dgutin           ###   ########.fr       */
+/*   Updated: 2020/09/30 20:55:42 by dgutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,4 @@ char	**ft_split(char *str, char *charset)
 	}
 	arr[len] = 0;
 	return (arr);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	char	**split;
-	split = ft_split("Salut lesamis", " ");
-	printf("[0] -- %s\n[1] -- %s\n[2] -- %s\n", split[0], split[1], split[2]);
-	return (0);
 }
